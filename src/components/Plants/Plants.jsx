@@ -1,16 +1,12 @@
 import "./Plants.css";
-
-export default function Plants({ plants }) {
+import Plant from "./Plant";
+export default function Plants({ plants, addToCart }) {
   return (
     <section>
       <h2>Plants</h2>
       <ul>
         {plants.map((plant) => (
-          <li key={plant.id} className="plant">
-            <figure>{plant.image}</figure>
-            <h3>{plant.name}</h3>
-            <button>Add to cart</button>
-          </li>
+          <Plant key={plant.id} plant={plant} addToCart={addToCart} />
         ))}
       </ul>
     </section>
